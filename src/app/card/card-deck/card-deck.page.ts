@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CardService} from '../shared/card.service';
 
 @Component({
     selector: 'app-card-deck',
@@ -6,8 +7,19 @@ import { Component } from '@angular/core';
     styleUrls: ['./card-deck.page.scss']
 })
 export class CardDeckPage {
-    public readonly cardDecks: string[] = ['Druid', 'Mage', 'Warrior', 'Rogue', 'Shaman', 'Priest', 'Warlock', 'Hunter', 'Paladin'];
+    constructor(private cardService: CardService){}
 
+    public cardDecks: string[];
+
+    ionViewWillEnter(){
+        this.getCardDecks();
+    }
+
+    private getCardDecks(){
+        //debugger;
+        this.cardService.GetCardDecks().subscribe(
+        (cardDecks: string[]) => this.cardDecks = cardDecks);
+    }
 }
 
  
