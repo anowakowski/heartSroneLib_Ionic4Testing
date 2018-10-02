@@ -5,6 +5,9 @@ import { Component } from '@angular/core';
     templateUrl: './card-deck.page.html',
     styleUrls: ['./card-deck.page.scss']
 })
-export class CardDeckPage {}
+export class CardDeckPage {
+    public readonly cardDecks: string[] = ['Druid', 'Mage', 'Warrior', 'Rogue', 'Shaman', 'Priest', 'Warlock', 'Hunter', 'Paladin'];
+
+}
 
  
