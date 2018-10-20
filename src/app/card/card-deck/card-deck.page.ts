@@ -36,6 +36,10 @@ export class CardDeckPage {
             this.cardDecks.push({name: deckName, types: cardDecks[deckName]});
         });
     }
+
+    generateUrl(cardDeckGroup: string, cardDeck: string): string{
+        return `/tabs/(card:card/${cardDeckGroup}/${cardDeck})`;
+    }
 }
 
  
